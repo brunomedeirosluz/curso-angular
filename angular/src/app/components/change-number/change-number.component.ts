@@ -14,7 +14,7 @@ export class ChangeNumberComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleClick() :void {
+  handleClick() : void {
     this.changeNumber.emit();
   }
 
