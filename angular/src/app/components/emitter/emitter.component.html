@@ -1,0 +1,7 @@
+<div class="class">
+    <h1>O numero é: {{ myNumber }}</h1>
+    <p *ngIf="myNumber === 10; else notWin">Congratulations, You Win!!!</p>
+    <app-change-number (changeNumber)="onChangeNumber()"></app-change-number>
+    <ng-template class="p" #notWin> tente novamente...</ng-template>
+    
+</div>

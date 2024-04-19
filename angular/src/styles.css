@@ -7,3 +7,9 @@
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
 }
+
+.class {
+    border-bottom: 1px solid blue;
+    padding: 2em;
+    margin-bottom: 1em;
+}
