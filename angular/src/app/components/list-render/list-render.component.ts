@@ -10,18 +10,15 @@ import { ListService } from 'src/app/service/list.service';
 })
 export class ListRenderComponent implements OnInit {
 
-  animals: Animals[] = [
-    {name: "Turca", type: "Dog", age: 1},
-    {name: "Tom", type: "Cat", age: 2},
-    {name: "Jack", type: "Dog", age: 3},
-    {name: "Valente", type: "Horse", age: 4}
-  ]
+  animals: Animals[] = []
 
   AnimalAge: string = '';
   AnimalExcluding: string = '';
   showAgeFlag: boolean = false
 
-  constructor(private listService: ListService) { }
+  constructor(private listService: ListService) {
+    this.getAnimals();
+   }
 
 
   ngOnInit(): void {
@@ -41,4 +38,7 @@ export class ListRenderComponent implements OnInit {
     this.AnimalExcluding = `O ${animal.name} foi excluido com sucesso!`
   }
 
+  getAnimals(): void {
+    this.listService.getAll().subscribe((animals) => (this.animals = animals ));
+  }
 }
