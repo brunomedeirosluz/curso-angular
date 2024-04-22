@@ -11,6 +11,5 @@ export class ListService {
 
   remove(animals: Animals[], animal: Animals) {
     return animals.filter((a) => animal.name !== a.name);
-    
-  }
-}
+  };
+};

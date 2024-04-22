@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Animals } from 'src/app/Animals';
 import { ListService } from 'src/app/service/list.service';
 
+
 @Component({
   selector: 'app-list-render',
   templateUrl: './list-render.component.html',
@@ -17,6 +18,7 @@ export class ListRenderComponent implements OnInit {
   ]
 
   AnimalAge: string = '';
+  AnimalExcluding: string = '';
   showAgeFlag: boolean = false
 
   constructor(private listService: ListService) { }
@@ -34,10 +36,9 @@ export class ListRenderComponent implements OnInit {
     this.showAgeFlag = !this.showAgeFlag;
   }
 
-  removeAnimal(animal: Animals) : void {
-    console.log('Removendo animal');
-    this.animals = this.listService.remove(this.animals, animal)
-    
+  removeAnimal(animal: Animals) {
+    this.animals = this.listService.remove(this.animals, animal);
+    this.AnimalExcluding = `O ${animal.name} foi excluido com sucesso!`
   }
 
 }
