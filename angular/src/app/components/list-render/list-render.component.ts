@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Animals } from 'src/app/Animals';
 import { ListService } from 'src/app/service/list.service';
 
+
 @Component({
   selector: 'app-list-render',
   templateUrl: './list-render.component.html',
@@ -9,17 +10,15 @@ import { ListService } from 'src/app/service/list.service';
 })
 export class ListRenderComponent implements OnInit {
 
-  animals: Animals[] = [
-    {name: "Turca", type: "Dog", age: 1},
-    {name: "Tom", type: "Cat", age: 2},
-    {name: "Jack", type: "Dog", age: 3},
-    {name: "Valente", type: "Horse", age: 4}
-  ]
+  animals: Animals[] = []
 
   AnimalAge: string = '';
+  AnimalExcluding: string = '';
   showAgeFlag: boolean = false
 
-  constructor(private listService: ListService) { }
+  constructor(private listService: ListService) {
+    this.getAnimals();
+   }
 
 
   ngOnInit(): void {
@@ -34,10 +33,12 @@ export class ListRenderComponent implements OnInit {
     this.showAgeFlag = !this.showAgeFlag;
   }
 
-  removeAnimal(animal: Animals) : void {
-    console.log('Removendo animal');
-    this.animals = this.listService.remove(this.animals, animal)
-    
+  removeAnimal(animal: Animals) {
+    this.animals = this.listService.remove(this.animals, animal);
+    this.AnimalExcluding = `O ${animal.name} foi excluido com sucesso!`
   }
 
+  getAnimals(): void {
+    this.listService.getAll().subscribe((animals) => (this.animals = animals ));
+  }
 }

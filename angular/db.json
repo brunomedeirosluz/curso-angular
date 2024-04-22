@@ -1,0 +1,65 @@
+{
+    "animals": [
+      {
+        "id": 1,
+        "name": "Rex",
+        "type": "dog",
+        "age": 5
+      },
+      {
+        "id": 2,
+        "name": "Whiskers",
+        "type": "cat",
+        "age": 3
+      },
+      {
+        "id": 3,
+        "name": "Buddy",
+        "type": "dog",
+        "age": 7
+      },
+      {
+        "id": 4,
+        "name": "Fluffy",
+        "type": "cat",
+        "age": 2
+      },
+      {
+        "id": 5,
+        "name": "Charlie",
+        "type": "dog",
+        "age": 4
+      },
+      {
+        "id": 6,
+        "name": "Oreo",
+        "type": "cat",
+        "age": 1
+      },
+      {
+        "id": 7,
+        "name": "Max",
+        "type": "dog",
+        "age": 6
+      },
+      {
+        "id": 8,
+        "name": "Simba",
+        "type": "cat",
+        "age": 5
+      },
+      {
+        "id": 9,
+        "name": "Bella",
+        "type": "dog",
+        "age": 3
+      },
+      {
+        "id": 10,
+        "name": "Luna",
+        "type": "cat",
+        "age": 4
+      }
+    ]
+  }
+  
